@@ -19,7 +19,7 @@ public class ReferenceMonitor {
 
   private void removePermission(User user, File file, Permission permission) {
     UserObjectTuple temp = new UserObjectTuple(user, file);
-    this.acl.put(temp, permissions);
+    this.acl.remove(temp, permissions);
   }
 
   public void readFile(User user, File file) {

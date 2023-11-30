@@ -1,22 +1,18 @@
-public class User {
+public class User{
+  private String name;
+  private ReferenceMonitor monitor;
 
-  private String username;
-  private File file
-
-  public User(String username, File file){
-    this.username = username;
-    this.file = file;
+  public User(String name) {
+    this.name = name;
   }
 
-  private String readFile(){
-    file.readFile()
+  public readFile(File file) {
+    monitor.readFile(this, file)
   }
-
-  private void writeFile(){
-    file.writeFile()
+  public writeFile(File file, String content) {
+    monitor.writeFile(this, file, content)
   }
-  
-  private void executeFile(){
-    file.executeFile()
+  public executeFile(File file) {
+    monitor.executeFile(this, file)
   }
 }

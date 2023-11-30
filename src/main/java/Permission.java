@@ -1,4 +1,5 @@
 public enum Permission {
     READ,
-    WRITE
+    WRITE,
+    EXECUTE
 }

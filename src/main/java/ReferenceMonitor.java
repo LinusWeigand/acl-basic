@@ -12,6 +12,16 @@ public class ReferenceMonitor {
     return permissions != null && permissions.contains(permission);
   }
 
+  private void addPermission(User user, File file, Permission permission) {
+    UserObjectTuple temp = new UserObjectTuple(user, file);
+    this.acl.put(temp, permissions);
+  }
+
+  private void removePermission(User user, File file, Permission permission) {
+    UserObjectTuple temp = new UserObjectTuple(user, file);
+    this.acl.put(temp, permissions);
+  }
+
   public void readFile(User user, File file) {
     if (!this.checkPermission(user, file, Permission.READ)) {
       return ;
